@@ -1,12 +1,11 @@
-# John Owed Portfolio
+# Weather Dashboard
 
 ## Description
 
-This is a personal web page to showcase my work and projects. It gives visitors a way to contact me and review my work including Github repositories. Recently, I've learned how to combine multiple code bases to get the output I am after. 
+This is a weather dashboard which takes advantage of two openweathermap API's. This allows users to not only get the current weather but also the weather 5-days into the future! Users can specific the cities they want to search and the history is kept. They can re-search old terms by clicking on the recently searched buttons.
 
 
 ## Table of Contents
-
 
 - [Usage](#usage)
 - [Credits](#credits)
@@ -15,24 +14,18 @@ This is a personal web page to showcase my work and projects. It gives visitors 
 
 ## Usage
 
-Hover over the "cards" and click to check out the live version of the project.
+Enter a city name in the upper left box "Enter city name" and click "Submit". This will pull the weather info. You can always search for old cities by clicking the city name buttons below the submit button in "Recently Searched". Enjoy endless days of weather seeking! Improper city names will not show results.
 
-![alt text](assets/images/website.png)
+![alt text](assets/images/weather.png)
 
 ## Credits
-
-I've mostly used the lessons from Week 2 to complete these site - specifically, lessons 16 + 26. I then used stackoverflow and google to fill in the details when I wanted to make changes.
+This was written from scratch but the API calls were learned in Week 6 content and the JQuery event listeners were learned in Week 5. I used these for help. 
 
 ## Features
-- Navigation which remains at the top of the page when scrolling
--"Cards" I can add multiple projects to that stack and unstack when resizing window
--Future mailing list sign-up once I can do Javascript to complete
-
-## Access
-- Navigation which remains at the top of the page when scrolling
--"Cards" I can add multiple projects to that stack and unstack when resizing window
--Future mailing list sign-up once I can do Javascript to complete
+- Search any city by name to pull up the current weather and 5-day forecast
+- See your city search history
+- Re-search old cities by clicking on their button, these will not get re-added to the list
 
 ## Access
 
-Click to view: [John Owed Portfolio](https://johnpow.github.io/mod2-personal-portfolio/).
+Click to view: [Johnpow's Weather Dashboard](https://johnpow.github.io/weather-forecast/).
