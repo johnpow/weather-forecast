@@ -10,11 +10,11 @@ const cityNow = document.getElementById('cityNow');
 const tempNow = document.getElementById('tempNow');
 const windNow = document.getElementById('windNow');
 const humidityNow = document.getElementById('humidityNow');
-const card1 = document.getElementById('card1');
-const card2 = document.getElementById('card2');
-const card3 = document.getElementById('card3');
-const card4 = document.getElementById('card4');
-const card5 = document.getElementById('card5');
+const card0 = document.getElementById('card1');
+const card1 = document.getElementById('card2');
+const card2 = document.getElementById('card3');
+const card3 = document.getElementById('card4');
+const card4 = document.getElementById('card5');
 
 $buttonSubmit.addEventListener('click', function () {
 
@@ -45,17 +45,34 @@ $buttonSubmit.addEventListener('click', function () {
 
             forecast.list.forEach(function(item, index) {
         
-                if ((index )  % 8 === 0) {
+                if ((index + 1 )  % 8 === 0) {
                     fiveDay.push(item)
                     console.log(index)
                 }
             });
-            card1.textContent = dayjs(fiveDay[0].dt*1000).format('M/D/YYYY')
-            card2.textContent = dayjs(fiveDay[1].dt*1000).format('M/D/YYYY')
-            card3.textContent = dayjs(fiveDay[2].dt*1000).format('M/D/YYYY')
-            card4.textContent = dayjs(fiveDay[3].dt*1000).format('M/D/YYYY')
-            card5.textContent = dayjs(fiveDay[4].dt*1000).format('M/D/YYYY')
 
+            for (i=0; i< fiveDay.length; i++) {
+            const cardFuture =eval('card'+i)
+            console.log(cardFuture)
+            cardFuture.textContent = dayjs(fiveDay[i].dt*1000).format('M/D/YYYY')
+            const cardData = document.createElement('ul');
+            const cardList = document.createElement('li');           
+            const imgCard = document.createElement('img');
+            imgCard.setAttribute('src', `https://openweathermap.org/img/wn/${fiveDay[i].weather[0].icon}@2x.png`);
+            imgCard.setAttribute('style', 'width: 30%') ;
+            cardFuture.appendChild(cardData);
+            cardData.appendChild(cardList);
+            cardList.append(imgCard);
+            const tempFuture = document.createElement('li');
+            const windFuture = document.createElement('li');
+            const humidityFuture = document.createElement('li');
+            tempFuture.textContent = `Temp: ${fiveDay[i].main.temp} °F`;
+            windFuture.textContent = `Wind: ${fiveDay[i].wind.speed} MPH`;
+            humidityFuture.textContent = `Humidity: ${fiveDay[i].main.humidity} %`;   
+            cardList.append(tempFuture);
+            cardList.append(windFuture);
+            cardList.append(humidityFuture);
+            }
 
 
 

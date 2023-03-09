@@ -66,6 +66,7 @@ article h3 {
   align-items: center;
   width: 100%;
   padding: 1%;
+  font-size: 110%;
 }
 
 .products {
@@ -88,7 +89,8 @@ article h3 {
   border-style: solid;
   border-width: 1px;
   padding: 3px;
-  flex: 0 0 150px;
+  height:  10%;
+  width:  17%;
   margin: 5px;
   background-color: rgb(19, 48, 77);
   color:#fff;
@@ -96,7 +98,7 @@ article h3 {
 }
 
 
-.buttonSubmit {
+#buttonSubmit {
   background-color: rgb(19, 48, 77);
   color:#fff;
 }
