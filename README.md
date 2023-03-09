@@ -19,7 +19,7 @@ Enter a city name in the upper left box "Enter city name" and click "Submit". Th
 ![alt text](assets/images/weather.png)
 
 ## Credits
-This was written from scratch but the API calls were learned in Week 6 content and the JQuery event listeners were learned in Week 5. I used these for help. 
+This was written from scratch but the API calls were learned in Week 6 content and the JQuery event listeners were learned in Week 5. I used these for help. I also re-used my HTML/CSS from my personal portfolio project as a starting point which pulled heavily from Week 2 lessons: [Personal Portfolio Repository](https://github.com/johnpow/mod2-personal-portfolio/). 
 
 ## Features
 - Search any city by name to pull up the current weather and 5-day forecast
