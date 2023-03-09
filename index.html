@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Where to next? Weather Dashboard</title>
+  <title>John Pow's Weather Dashboard</title>
   <link rel="stylesheet" href="./assets/css/reset.css" />
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
@@ -17,10 +17,8 @@
   <main>
     <aside>
       <h2>Search for a City:</h2>
-      <form>
-        <input type="text" placeholder="Enter city name" />
-        <button class="buttonSubmit">Submit</button>
-      </form>
+        <input id='cityInput' type="text" placeholder="Enter city name" />
+        <button id="buttonSubmit">Submit</button>
       <hr>
       <h3 id="contact">Recently Searched:</h3>
       <ul>
@@ -36,17 +34,17 @@
         <!-- Product Cards -->
         <div id="projects" class="products">
           <section class="cardmain">
-            <h2>Toledo (6/25/2023) <img style = "width: 5%" src="https://openweathermap.org/img/wn/10d@2x.png" /> </h2> 
+            <h2 id="cityNow"></h2> 
             <!-- create image as a link -->
               <ul> 
-                <li>Temp: </li>
-                <li>Wind: </li>
-                <li>Humidity: </li>
+                <li id="tempNow">Temp: </li>
+                <li id="windNow">Wind: </li>
+                <li id="humidityNow">Humidity: </li>
               </ul>
           </section>
           <h3>5-Day Forecast:</h3> 
           <section class="card">
-            <h3>6/26/2023</h3>
+            <h3 id = "card1">6/26/2023</h3>
               <ul> 
                 <li><img style = "width: 30%" src="https://openweathermap.org/img/wn/10d@2x.png"></li>
                 <li>Temp: </li>
@@ -55,7 +53,7 @@
               </ul>
           </section>
           <section class="card">
-            <h3>6/27/2023</h3>
+            <h3  id = "card2">6/27/2023</h3>
             <ul> 
               <li><img style = "width: 30%" src="https://openweathermap.org/img/wn/10d@2x.png"></li>
               <li>Temp: </li>
@@ -63,8 +61,8 @@
               <li>Humidity: </li>
             </ul>
           </section>
-          <section class="card">
-            <h3>6/28/2023</h3>
+          <section class="card" >
+            <h3 id = "card3">6/28/2023</h3>
             <ul> 
               <li><img style = "width: 30%" src="https://openweathermap.org/img/wn/10d@2x.png"></li>
               <li>Temp: </li>
@@ -72,8 +70,8 @@
               <li>Humidity: </li>
             </ul>
           </section>
-          <section class="card">
-            <h3>6/29/2023</h3>
+          <section class="card" >
+            <h3 id = "card4">6/29/2023</h3>
             <ul> 
               <li><img style = "width: 30%" src="https://openweathermap.org/img/wn/10d@2x.png"></li>
               <li>Temp: </li>
@@ -81,8 +79,8 @@
               <li>Humidity: </li>
             </ul>
           </section>
-          <section class="card">
-            <h3>6/30/2023</h3>
+          <section class="card" >
+            <h3 id = "card5">6/30/2023</h3>
             <ul> 
               <li><img style = "width: 30%" src="https://openweathermap.org/img/wn/10d@2x.png"></li>
               <li>Temp: </li>
@@ -95,7 +93,13 @@
     </section>
 
   </main>
-
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+  integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+  crossorigin="anonymous"
+></script>
+  <script src = './assets/js/script.js'></script>
 </body>
 
 </html>
