@@ -15,6 +15,9 @@ const card1 = document.getElementById('card2');
 const card2 = document.getElementById('card3');
 const card3 = document.getElementById('card4');
 const card4 = document.getElementById('card5');
+const searchButHist = document.getElementById('oldsearch');
+
+let buttonHist = JSON.parse(localStorage.getItem("searchHist"));
 
 $buttonSubmit.addEventListener('click', function () {
 
@@ -44,16 +47,14 @@ $buttonSubmit.addEventListener('click', function () {
             fiveDay = [];
 
             forecast.list.forEach(function(item, index) {
-        
+        // need to see if there is a way to always do noon, currenly grabbing current time
                 if ((index + 1 )  % 8 === 0) {
                     fiveDay.push(item)
-                    console.log(index)
                 }
             });
 
             for (i=0; i< fiveDay.length; i++) {
             const cardFuture =eval('card'+i)
-            console.log(cardFuture)
             cardFuture.textContent = dayjs(fiveDay[i].dt*1000).format('M/D/YYYY')
             const cardData = document.createElement('ul');
             const cardList = document.createElement('li');           
@@ -77,27 +78,35 @@ $buttonSubmit.addEventListener('click', function () {
 
 
       })})
+
+      buttonHist.unshift(cityInput)
+      localStorage.setItem('searchHist', JSON.stringify(buttonHist));
+      renderSearch();
+
   });
 
+const renderSearch = function () {
+
+ searchButHist.innerHTML = "";
+
+ if (buttonHist !== null) {
+  buttonHist.forEach(function(item) {
+     
+    const oldSearch = document.createElement('button');
+    oldSearch.setAttribute('id', 'generated-button') ;
+    oldSearch.textContent = item;
+
+    searchButHist.appendChild(oldSearch)
+  })
+  } else {
+    buttonHist = []
+  }
+};
+renderSearch();
 
 
 
-// const $container = document.querySelector('.container');
 
+  
 
-// $searchBtn.addEventListener('click', function () {
-
-//   const giphyInput = $giphyInput.value;
-//   fetch(`${url}?api_key=${API_KEY}&q=${giphyInput}&rating=g`)
-//     .then(response => response.json())
-//     .then(function (data) {
-//       console.log(data.data[0]);
-//       // console.log(data.data[0].images.original.url);
-
-//       for (let i = 0; i < data.data.length; i++) {
-//         const $img = document.createElement('img');
-//         $img.setAttribute('src', data.data[i].images.original.url);
-//         $container.appendChild($img);
-//       }
-//     });
-// });
+  
