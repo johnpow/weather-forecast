@@ -86,7 +86,7 @@ const getWeather = function (cityInput) {
         });
 
 
-      renderSearch();
+      
     });
 };
 
@@ -95,6 +95,7 @@ $buttonSubmit.on("click", function () {
   buttonHist.unshift($cityInput.val());
   localStorage.setItem("searchHist", JSON.stringify(buttonHist));
   $cityInput.val('')
+  renderSearch();
 });
 
 const renderSearch = function () {
