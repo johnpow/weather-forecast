@@ -85,15 +85,16 @@ const getWeather = function (cityInput) {
           }
         });
 
-      buttonHist.unshift($cityInput.val());
-      localStorage.setItem("searchHist", JSON.stringify(buttonHist));
-      $cityInput.val('')
+
       renderSearch();
     });
 };
 
 $buttonSubmit.on("click", function () {
   getWeather($cityInput.val());
+  buttonHist.unshift($cityInput.val());
+  localStorage.setItem("searchHist", JSON.stringify(buttonHist));
+  $cityInput.val('')
 });
 
 const renderSearch = function () {
@@ -119,4 +120,5 @@ renderSearch();
 searchButHist.on("click", "#generated-button", function (event) {
   $cityInput.val(event.target.value);
   getWeather($cityInput.val());
+  $cityInput.val('')
 });
